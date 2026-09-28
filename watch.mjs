@@ -7,7 +7,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 // >>> ITT ÁLLÍTSD BE: a Hardveraprón keress rá, állítsd be a szűrőket (videokártya kategória,
 // >>> maximum ár), rendezd a találatokat a legújabb szerint, és másold be az oldal URL-jét.
 const LIST_URLS = [
-  'IDE_MASOLD_BE_A_4070_TI_SUPER_KERESES_URL-JET',
+  'https://hardverapro.hu/aprok/hardver/videokartya/nvidia/geforce_40xx/keres.php?stext=4070+ti+super&stcid_text=&stcid=&stmid_text=&stmid=&minprice=&maxprice=420000&cmpid_text=&usrid_text=&usrid=&__buying=1&__buying=0&stext_none=&noiced=1&__brandnew=1&__brandnew=0',
   'IDE_MASOLD_BE_AZ_5070_TI_KERESES_URL-JET',
 ];
 
