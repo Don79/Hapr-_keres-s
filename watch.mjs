@@ -1,4 +1,4 @@
-// HardverApró figyelő: ntfy.sh push értesítés új RTX 4070 Ti Super / RTX 5070 Ti hirdetésekről.
+// HardverApró figyelő: ntfy.sh push értesítés új csak RTX 5070 Ti hirdetésekről.
 // Alapja: Rudesz/hardverapro-red-figyelo (a hirdetéslista-feldolgozó rész onnan származik).
 // Futtatás: NTFY_TOPIC=<topic> node watch.mjs   (próba, küldés és mentés nélkül: DRY_RUN=1 node watch.mjs)
 
@@ -7,16 +7,16 @@ import { readFile, writeFile } from 'node:fs/promises';
 // >>> ITT ÁLLÍTSD BE: a Hardveraprón keress rá, állítsd be a szűrőket (videokártya kategória,
 // >>> maximum ár), rendezd a találatokat a legújabb szerint, és másold be az oldal URL-jét.
 const LIST_URLS = [
-  'https://hardverapro.hu/aprok/hardver/videokartya/nvidia/geforce_40xx/keres.php?stext=4070+ti+super&stcid_text=&stcid=&stmid_text=&stmid=&minprice=&maxprice=420000&cmpid_text=&usrid_text=&usrid=&__buying=1&__buying=0&stext_none=&noiced=1&__brandnew=1&__brandnew=0',
+  
   'https://hardverapro.hu/aprok/hardver/videokartya/nvidia/geforce_50xx_sorozat/keres.php?stext=5070+ti&stcid_text=&stcid=&stmid_text=&stmid=&minprice=&maxprice=420000&cmpid_text=&usrid_text=&usrid=&__buying=1&__buying=0&stext_none=&noiced=1&__brandnew=1&__brandnew=0',
 ];
 
 // Ennél drágább hirdetésről nem küld értesítést (Ft). Ha nincs ár a hirdetésben, átengedi.
 const MAX_PRICE = 400_000;
 
-// Modell a címben: 4070 Ti Super (4070 Ti S, 4070TiS is) vagy 5070 Ti.
+// Modell a címben: 5070 Ti.
 const MODEL =
-  /(?<!\d)4070[\s._-]?ti[\s._-]?(?:super|s)(?![a-z])|(?<!\d)5070[\s._-]?ti(?![a-z])/i;
+  /(?<!\d)5070[\s._-]?ti(?![a-z])/i;
 
 // Nem különálló kártya (gépek, laptopok) kizárása.
 const EXCLUDE = /laptop|notebook|\bpc\b|komplett|konfig|szerver/i;
