@@ -8,11 +8,11 @@ import { readFile, writeFile } from 'node:fs/promises';
 // >>> maximum ár), rendezd a találatokat a legújabb szerint, és másold be az oldal URL-jét.
 const LIST_URLS = [
   
-  'https://hardverapro.hu/aprok/hardver/videokartya/nvidia/geforce_50xx_sorozat/keres.php?stext=5070+ti&stcid_text=&stcid=&stmid_text=&stmid=&minprice=&maxprice=420000&cmpid_text=&usrid_text=&usrid=&__buying=1&__buying=0&stext_none=&noiced=1&__brandnew=1&__brandnew=0',
+  'https://hardverapro.hu/aprok/hardver/videokartya/nvidia/geforce_50xx_sorozat/keres.php?stext=5070+ti&stcid_text=&stcid=&stmid_text=&stmid=&minprice=&maxprice=&cmpid_text=&usrid_text=&usrid=&__buying=1&__buying=0&stext_none=&noiced=1&__brandnew=1&__brandnew=0',
 ];
 
 // Ennél drágább hirdetésről nem küld értesítést (Ft). Ha nincs ár a hirdetésben, átengedi.
-const MAX_PRICE = 400_000;
+const MAX_PRICE = 600_000;
 
 // Modell a címben: 5070 Ti.
 const MODEL =
